@@ -1,0 +1,275 @@
+/* ===========================================
+   ESTILOS COMPARTILHADOS - TODAS AS PÁGINAS
+   =========================================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #000;
+    font-family: "Poppins", Arial, Verdana, Tahoma;
+    font-size: 18px;
+    color: #e0faff;
+    padding-top: 120px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header/Navigation Styles */
+.container_topo {
+    display: flex;
+    border: solid black 1px;
+    justify-content: space-between;
+    padding: 20px 30px;
+    height: 105px;
+    align-items: center;
+    background-color: rgba(15, 25, 35, 0.9);
+    box-shadow: 0 0 30px rgba(0, 180, 255, 0.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.barra {
+    color: #fff;
+    margin: 0 15px;
+}
+
+.li-cabeca {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 50px;
+    justify-content: center;
+}
+
+.logo {
+    height: 100%;
+    border-radius: 100px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    opacity: 80%;
+}
+
+.logo:hover {
+    opacity: 100%;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Banner Styles */
+.banner {
+    width: 100%;
+    height: 350px;
+    border-radius: 60px;
+    background-size: 120%;
+    background-position: center;
+    border: 1px solid #8ec9ff;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(120, 190, 255, 0.3);
+    transition: all 0.5s ease;
+}
+
+.banner:hover {
+    background-size: 125%;
+    box-shadow: 0 0 30px rgba(0, 200, 255, 0.5);
+}
+
+/* Typography */
+p {
+    color: #00eaff;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    margin: 15px 0;
+    line-height: 1.6em;
+    text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 180, 255, 0.8);
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid #00b4ff;
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #00eaff;
+}
+
+h4 {
+    font-size: 1.2em;
+    color: #87ceeb;
+}
+
+/* Links */
+a {
+    color: #00b4ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #00eaff;
+    text-decoration: underline;
+}
+
+/* Container */
+#container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Utility Classes */
+.AjusteA {
+    font-size: 1.1em;
+    margin: 25px 0;
+    padding: 20px;
+    background-color: rgba(15, 25, 35, 0.8);
+    border-radius: 15px;
+    border-left: 4px solid #00b4ff;
+}
+
+.AjusteB {
+    font-size: 1.05em;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: rgba(0, 20, 40, 0.6);
+    border-radius: 10px;
+}
+
+/* Links Extras */
+.links-extras {
+    text-align: center;
+    margin: 30px 0;
+    padding: 15px;
+    background-color: rgba(0, 100, 150, 0.2);
+    border-radius: 20px;
+    border: 1px solid #00b4ff;
+}
+
+.youtube-link {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ff0000 !important;
+}
+
+.youtube-link:hover {
+    color: #ff4444 !important;
+}
+
+/* Buttons */
+.btn-contato {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #00b4ff, #0080ff);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 180, 255, 0.3);
+}
+
+.btn-contato:hover {
+    background: linear-gradient(45deg, #00eaff, #00b4ff);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 234, 255, 0.4);
+}
+
+/* Redes Sociais */
+.inserir_redes {
+    margin: 40px 0;
+}
+
+.redes-container {
+    background-color: rgba(15, 25, 35, 0.95);
+    border: 1px solid #00b4ff;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 0 30px rgba(0, 180, 255, 0.3);
+}
+
+.redes-links p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.redes-links a {
+    color: #00eaff !important;
+    font-weight: bold;
+}
+
+.redes-links a:hover {
+    color: #87ceeb !important;
+}
+
+/* Footer */
+.rodape {
+    margin-top: 50px;
+    padding: 30px 0;
+    border-top: 2px solid #00b4ff;
+    text-align: center;
+}
+
+.rodape-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 180, 255, 0.3);
+}
+
+.rodape-bottom p {
+    font-size: 0.9em;
+    color: #87ceeb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding-top: 100px;
+    }
+
+    .container_topo {
+        padding: 15px 20px;
+        height: 80px;
+    }
+
+    .banner {
+        height: 250px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    #container {
+        padding: 15px;
+    }
+
+    .AjusteA, .AjusteB {
+        padding: 15px;
+    }
+}
