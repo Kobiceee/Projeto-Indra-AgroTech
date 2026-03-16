@@ -15,10 +15,10 @@ export default function Prototype() {
   const [filter, setFilter] = useState('Todos');
 
   const services = [
-    { id: 1, title: 'Consultoria Indra', category: 'Gestão', icon: 'fa-chart-line', desc: 'Otimização de processos internos e inteligência de negócio.' },
-    { id: 2, title: 'Design de Interface', category: 'Design', icon: 'fa-pen-nib', desc: 'Criação de experiências visuais únicas e intuitivas.' },
-    { id: 3, title: 'Estratégia Digital', category: 'Marketing', icon: 'fa-bullhorn', desc: 'Posicionamento de marca e autoridade no mercado digital.' },
-    { id: 4, title: 'Desenvolvimento Web', category: 'Design', icon: 'fa-code', desc: 'Criação de sites responsivos, rápidos e otimizados.' },
+    { id: 1, title: 'Monitoramento de Cultivos', category: 'Monitoramento', icon: 'fa-chart-line', desc: 'Acompanhamento em tempo real das condições da plantação, incluindo umidade do solo, temperatura e saúde das culturas.' },
+    { id: 2, title: 'Interface do Produtor', category: 'Design', icon: 'fa-pen-nib', desc: 'Painel intuitivo para agricultores visualizarem dados da lavoura, alertas e relatórios de produção.' },
+    { id: 3, title: 'Análise Inteligente', category: 'Análise', icon: 'fa-bullhorn', desc: 'Uso de algoritmos para prever produtividade, detectar problemas na lavoura e sugerir melhorias.' },
+    { id: 4, title: 'Automação Agrícola', category: 'Automação', icon: 'fa-code', desc: 'Integração com sensores e sistemas automáticos para irrigação e controle eficiente da produção.' },
   ];
 
   const filteredItems = filter === 'Todos' 
@@ -43,7 +43,7 @@ export default function Prototype() {
           </div>
           
           <div className="filter-buttons">
-            {['Todos', 'Gestão', 'Design', 'Marketing'].map(cat => (
+            {['Todos', 'Monitoramento', 'Design', 'Análise', 'Automação'].map(cat => (
               <button 
                 key={cat}
                 className={filter === cat ? 'active' : ''} 
