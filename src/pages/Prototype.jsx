@@ -9,213 +9,71 @@ import fundoImage from '../assets/img/FundoLIMPO.png'
 // eslint-disable-next-line no-unused-vars
 import logoImage from '../assets/img/Logo indra.png'
 
-function Prototype() {
-  const [formData, setFormData] = useState({
-    nome: '',
-    email: '',
-    mensagem: ''
-  })
-  const [submitted, setSubmitted] = useState(false)
-  const [redisState, setRedisState] = useState({
-    instagram: { visible: false },
-    linkedin: { visible: false },
-    github: { visible: false }
-  })
+import '../css/ServicesGallery.css';
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
+export default function Prototype() {
+  const [filter, setFilter] = useState('Todos');
 
-  const validateForm = () => {
-    const { nome, email, mensagem } = formData
+  const services = [
+    { id: 1, title: 'Consultoria Indra', category: 'Gestão', icon: 'fa-chart-line', desc: 'Otimização de processos internos e inteligência de negócio.' },
+    { id: 2, title: 'Design de Interface', category: 'Design', icon: 'fa-pen-nib', desc: 'Criação de experiências visuais únicas e intuitivas.' },
+    { id: 3, title: 'Estratégia Digital', category: 'Marketing', icon: 'fa-bullhorn', desc: 'Posicionamento de marca e autoridade no mercado digital.' },
+    { id: 4, title: 'Desenvolvimento Web', category: 'Design', icon: 'fa-code', desc: 'Criação de sites responsivos, rápidos e otimizados.' },
+  ];
 
-    if (nome.trim() === '') {
-      alert('Por favor, preencha o seu nome completo.')
-      return false
-    }
-
-    const partes = nome.trim().split(' ').filter(p => p.length > 0)
-
-    if (partes.length < 2) {
-      alert('Por favor, insira também o seu sobrenome.')
-      return false
-    }
-
-    if (partes[0].length < 2 || partes[1].length < 2) {
-      alert('Nome e sobrenome devem ter ao menos 2 letras cada.')
-      return false
-    }
-
-    if (email.trim() === '') {
-      alert('Por favor, preencha o seu e-mail.')
-      return false
-    }
-
-    if (!email.includes('@') || !email.includes('.')) {
-      alert('Por favor, insira um e-mail válido.')
-      return false
-    }
-
-    if (mensagem.trim() === '') {
-      alert('Por favor, escreva sua mensagem.')
-      return false
-    }
-
-    if (mensagem.length > 500) {
-      alert('Sua mensagem deve ter no máximo 500 caracteres.')
-      return false
-    }
-
-    return true
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
-    if (validateForm()) {
-      console.log(formData.nome, formData.email, formData.mensagem)
-      setSubmitted(true)
-      setFormData({ nome: '', email: '', mensagem: '' })
-      setTimeout(() => {
-        document.querySelector('.inserir_div')?.scrollIntoView({ behavior: 'smooth' })
-      }, 0)
-    }
-  }
-
-  const closeModal = (type) => {
-    setRedisState(prev => ({
-      ...prev,
-      [type]: { visible: false }
-    }))
-  }
-
-  const renderModal = (type) => {
-    const state = redisState[type]
-    if (!state.visible || !state.data) return null
-
-    return (
-      <section className="redes-container">
-        <div className="redes-container" id="container">
-          <button
-            onClick={() => closeModal(type)}
-            className="close-btn"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.5rem' }}
-          >
-            ✕
-          </button>
-          <h2>Conecte-se com a gente</h2>
-          <h3>{state.data.title}</h3>
-          <div className="redes-links">
-            {state.data.links.map((link, idx) => (
-              <p key={idx}>
-                <u>
-                  <a href={link.url || '#'} target="_blank" rel="noopener noreferrer">
-                    {link.name}
-                    <i className={`fa-brands ${state.data.icon}`}></i>
-                  </a>
-                </u>
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
-  }
+  const filteredItems = filter === 'Todos' 
+    ? services 
+    : services.filter(item => item.category === filter);
 
   return (
     <div id="container">
       <div 
-            className="banner" 
-            style={{ backgroundImage: `url(${indraImage})` }}
-          ></div>
+        className="banner" 
+        style={{ backgroundImage: `url(${indraImage})` }}
+      ></div>
 
-      <h1>Protótipo em Desenvolvimento <hr /></h1>
+      <h1>Protótipo Indra <hr /></h1>
 
-      <p className="intro-contato">
-        A <strong>Indra</strong> está em constante evolução.
-        Neste momento, nossa equipe trabalha para cultivar uma experiência ainda mais inteligente e sustentável —
-        integrando tecnologia, natureza e cuidado em um só ecossistema digital.
-      </p>
-
-      <div className="loader"></div>
-      <p className="subtext">Estamos germinando algo novo. Em breve, você poderá conhecer o resultado.</p>
-
-      <div className="cadastro">
-        <h2>Quer ser avisado quando lançarmos?</h2>
-        <section id="prototipo" className="fale-conosco">
-          <p>
-            Inscreva-se abaixo para receber uma notificação assim que o protótipo estiver disponível.
-            Faça parte das primeiras pessoas a explorar o futuro do cultivo consciente com a Indra.
-          </p>
-          <form className="form__cadastro" id="form_cadastro" onSubmit={handleSubmit}>
-            <div className="input-group">
-              <label htmlFor="nome">Nome Completo</label>
-              <input
-                type="text"
-                id="nome"
-                name="nome"
-                placeholder="Digite seu nome completo"
-                value={formData.nome}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="input-group">
-              <label htmlFor="email">E-mail</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Digite seu e-mail"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="input-group">
-              <label htmlFor="mensagem">Mensagem</label>
-              <textarea
-                id="mensagem"
-                name="mensagem"
-                placeholder="Digite sua mensagem (máx. 500 caracteres)"
-                maxLength="500"
-                value={formData.mensagem}
-                onChange={handleChange}
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" id="btn-enviar">Enviar</button>
-          </form>
-        </section>
-      </div>
-
-      <div className="inserir_div">
-        {submitted && (
-          <div id="container" className="fim">
-            <p className="agradecimento">
-              Agradecemos pelo seu interesse <u>{formData.nome}</u>!<br />
-              Juntos, podemos cultivar um futuro mais verde e consciente.
-            </p>
+      <section className="services-section">
+        <div className="container">
+          <div className="header-content">
+            <span className="top-title">Nossa Expertise</span>
+            <h2>Nossos Serviços</h2>
+            <div className="underline"></div>
           </div>
-        )}
-      </div>
+          
+          <div className="filter-buttons">
+            {['Todos', 'Gestão', 'Design', 'Marketing'].map(cat => (
+              <button 
+                key={cat}
+                className={filter === cat ? 'active' : ''} 
+                onClick={() => setFilter(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
 
-      <div className="inserir_redes">
-        {renderModal('instagram')}
-        {renderModal('linkedin')}
-        {renderModal('github')}
-      </div>
+          <div className="services-grid">
+            {filteredItems.map(service => (
+              <div key={service.id} className="service-card">
+                <div className="icon-box">
+                  <i className={`fa-solid ${service.icon}`}></i>
+                </div>
+                <h3>{service.title}</h3>
+                <span className="badge">{service.category}</span>
+                <p>{service.desc}</p>
+                <div className="card-footer">
+                  <span>Saiba mais</span>
+                  <i className="fa-solid fa-arrow-right-long"></i>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>
-  )
+  );
 }
-
-export default Prototype

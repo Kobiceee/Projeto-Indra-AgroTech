@@ -1,0 +1,118 @@
+.services-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #0f0f1b; /* Fundo mais profundo */
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .header-content {
+    margin-bottom: 40px;
+  }
+  
+  .top-title {
+    color: #00d2ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  
+  .underline {
+    width: 50px;
+    height: 3px;
+    background: #00d2ff;
+    margin: 10px auto;
+  }
+  
+  .filter-buttons {
+    margin-bottom: 40px;
+  }
+  
+  .filter-buttons button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 8px 25px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-buttons button:hover {
+    color: white;
+    border-color: #00d2ff;
+  }
+  
+  .filter-buttons button.active {
+    background: #00d2ff;
+    border-color: #00d2ff;
+    color: #0f0f1b;
+    font-weight: bold;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .service-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    text-align: left; /* Alinhamento à esquerda fica mais profissional */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: #00d2ff;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .icon-box {
+    font-size: 2rem;
+    color: #00d2ff;
+    margin-bottom: 20px;
+  }
+  
+  .service-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+  }
+  
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    background: rgba(0, 210, 255, 0.1);
+    padding: 5px 12px;
+    border-radius: 5px;
+    color: #00d2ff;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .service-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+  
+  .card-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #00d2ff;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
