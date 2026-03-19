@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import '../css/Indra.css'
+import logoImage from '../assets/img/Logo indra.png'
 
 function Header() {
   return (
     <header className="container_topo">
       <div className="logo">
         <Link to="/">
-          <img src="/src/assets/img/Logo indra.png" alt="Logo Indra" className="logo" id="home" />
+          <img src={logoImage} alt="Logo Indra" className="logo" id="home" />
         </Link>
       </div>
       <nav>
