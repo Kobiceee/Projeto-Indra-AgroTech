@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import '../css/Indra.css'
 import Footer from '../components/Footer'
+import FeedbackSection from '../components/FeedbackSection'
 import indraImage from '../assets/img/Indra.png'
 // eslint-disable-next-line no-unused-vars
 import bannerImage from '../assets/img/bannerindra.png'
@@ -194,6 +195,7 @@ function Home() {
         {renderModal('github')}
       </div>
 
+      <FeedbackSection />
       <Footer />
     </div>
   )

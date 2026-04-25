@@ -1,0 +1,109 @@
+.feedback-section {
+  padding: 60px 20px;
+  background: #0b0b13;
+  color: #fff;
+}
+
+.feedback-section .container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.feedback-section h2 {
+  margin-bottom: 30px;
+  font-size: clamp(2rem, 2.5vw, 2.75rem);
+  text-align: center;
+}
+
+.feedback-form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.feedback-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.feedback-form button {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.feedback-form button:hover {
+  background: #4f46e5;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
+.reviews-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 12px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.rating-stars {
+  display: inline-flex;
+  gap: 4px;
+  color: #facc15;
+}
+
+.star {
+  opacity: 0.3;
+}
+
+.star.filled {
+  opacity: 1;
+}
+
+.empty-feedback {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1rem;
+  color: #c2c2c2;
+}
