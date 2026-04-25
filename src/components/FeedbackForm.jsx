@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 const FeedbackForm = ({ onAdd }) => {
   const [user, setUser] = useState('')
   const [text, setText] = useState('')
+  const [rating, setRating] = useState(5)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -14,11 +15,12 @@ const FeedbackForm = ({ onAdd }) => {
       id: Date.now(),
       user: user.trim(),
       text: text.trim(),
-      rating: 5
+      rating
     })
 
     setUser('')
     setText('')
+    setRating(5)
   }
 
   return (
@@ -29,6 +31,28 @@ const FeedbackForm = ({ onAdd }) => {
         value={user}
         onChange={(e) => setUser(e.target.value)}
       />
+
+      <div className="rating-input">
+        <span>Avaliação:</span>
+        <div className="rating-select">
+          {Array.from({ length: 5 }).map((_, index) => {
+            const value = index + 1
+            return (
+              <button
+                type="button"
+                key={value}
+                className={`rating-star ${value <= rating ? 'selected' : ''}`}
+                onClick={() => setRating(value)}
+                aria-label={`${value} estrela${value > 1 ? 's' : ''}`}
+              >
+                ★
+              </button>
+            )
+          })}
+          <span className="rating-value">{rating} de 5</span>
+        </div>
+      </div>
+
       <textarea
         placeholder="Sua mensagem..."
         value={text}

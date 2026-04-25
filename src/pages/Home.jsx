@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import '../css/Indra.css'
 import Footer from '../components/Footer'
 import FeedbackSection from '../components/FeedbackSection'
@@ -12,136 +11,6 @@ import logoImage from '../assets/img/Logo indra.png'
 
 
 function Home() {
-  const [redisState, setRedisState] = useState({
-    instagram: { visible: false },
-    linkedin: { visible: false },
-    github: { visible: false }
-  })
-
-  useEffect(() => {
-    const handleInstagram = () => {
-      setRedisState(prev => ({
-        ...prev,
-        instagram: {
-          visible: true,
-          data: {
-            title: 'Instagram',
-            links: [
-              { name: 'Hendrik', url: 'https://www.instagram.com/kobiceee' },
-              { name: 'Taua', url: '' },
-              { name: 'Andrey', url: '' },
-              { name: 'Fabio', url: '' },
-              { name: 'Felipe', url: '' }
-            ]
-          }
-        }
-      }))
-      setTimeout(() => {
-        document.querySelector('.inserir_redes')?.scrollIntoView({ behavior: 'smooth' })
-      }, 0)
-    }
-
-    const handleLinkedin = () => {
-      setRedisState(prev => ({
-        ...prev,
-        linkedin: {
-          visible: true,
-          data: {
-            title: 'LinkedIn',
-            links: [
-              { name: 'Hendrik', url: 'https://www.linkedin.com/in/hendrik-bernardes-obice-2913842bb' },
-              { name: 'Taua', url: '' },
-              { name: 'Andrey', url: '' },
-              { name: 'Fabio', url: '' },
-              { name: 'Felipe', url: '' }
-            ]
-          }
-        }
-      }))
-      setTimeout(() => {
-        document.querySelector('.inserir_redes')?.scrollIntoView({ behavior: 'smooth' })
-      }, 0)
-    }
-
-    const handleGithub = () => {
-      setRedisState(prev => ({
-        ...prev,
-        github: {
-          visible: true,
-          data: {
-            title: 'GitHub',
-            links: [
-              { name: 'Hendrik', url: 'https://github.com/Kobiceee' },
-              { name: 'Taua', url: '' },
-              { name: 'Andrey', url: '' },
-              { name: 'Fabio', url: '' },
-              { name: 'Felipe', url: '' }
-            ]
-          }
-        }
-      }))
-      setTimeout(() => {
-        document.querySelector('.inserir_redes')?.scrollIntoView({ behavior: 'smooth' })
-      }, 0)
-    }
-
-    const btnIg = document.getElementById('btn-ig')
-    const btnIn = document.getElementById('btn-in')
-    const btnGit = document.getElementById('btn-git')
-
-    if (btnIg) btnIg.addEventListener('click', handleInstagram)
-    if (btnIn) btnIn.addEventListener('click', handleLinkedin)
-    if (btnGit) btnGit.addEventListener('click', handleGithub)
-
-    return () => {
-      if (btnIg) btnIg.removeEventListener('click', handleInstagram)
-      if (btnIn) btnIn.removeEventListener('click', handleLinkedin)
-      if (btnGit) btnGit.removeEventListener('click', handleGithub)
-    }
-  }, [])
-
-  const closeModal = (type) => {
-    setRedisState(prev => ({
-      ...prev,
-      [type]: { visible: false }
-    }))
-  }
-
-  const renderModal = (type) => {
-    const state = redisState[type]
-    if (!state.visible || !state.data) return null
-
-    return (
-      <section className="redes-container">
-        <div className="redes-container" id="container">
-          <button
-            onClick={() => closeModal(type)}
-            className="close-btn"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.5rem' }}
-          >
-            ✕
-          </button>
-          <h2>Conecte-se com a gente</h2>
-          <h3>{state.data.title}</h3>
-          <div className="redes-links">
-            {state.data.links.map((link, idx) => (
-              <p key={idx}>
-                <u>
-                  <a href={link.url || '#'} target="_blank" rel="noopener noreferrer">
-                    {link.name}
-                    {type === 'instagram' && <i className="fa-brands fa-instagram"></i>}
-                    {type === 'linkedin' && <i className="fa-brands fa-linkedin"></i>}
-                    {type === 'github' && <i className="fa-brands fa-github"></i>}
-                  </a>
-                </u>
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
-  }
-
   return (
     <div id="container">
         <div 
@@ -188,12 +57,6 @@ function Home() {
       <a href="/contato#form_info" className="btn-contato">
         Clique Aqui
       </a>
-
-      <div className="inserir_redes">
-        {renderModal('instagram')}
-        {renderModal('linkedin')}
-        {renderModal('github')}
-      </div>
 
       <FeedbackSection />
       <Footer />

@@ -42,6 +42,48 @@
   resize: vertical;
 }
 
+.rating-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #d1d5db;
+  font-size: 0.95rem;
+}
+
+.rating-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rating-star {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.rating-star:hover,
+.rating-star.selected {
+  color: #facc15;
+  border-color: rgba(250, 204, 21, 0.9);
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.25);
+}
+
+.rating-value {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
 .feedback-form button {
   background: #6366f1;
   color: white;

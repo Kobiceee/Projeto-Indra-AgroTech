@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import '../css/Indra2.css'
 import Footer from '../components/Footer'
 import indraImage from '../assets/img/Indra.png'
@@ -10,52 +9,6 @@ import fundoImage from '../assets/img/FundoLIMPO.png'
 import logoImage from '../assets/img/Logo indra.png'
 
 function About() {
-  const [redisState, setRedisState] = useState({
-    instagram: { visible: false },
-    linkedin: { visible: false },
-    github: { visible: false }
-  })
-
-  const closeModal = (type) => {
-    setRedisState(prev => ({
-      ...prev,
-      [type]: { visible: false }
-    }))
-  }
-
-  const renderModal = (type) => {
-    const state = redisState[type]
-    if (!state.visible || !state.data) return null
-
-    return (
-      <section className="redes-container">
-        <div className="redes-container" id="container">
-          <button
-            onClick={() => closeModal(type)}
-            className="close-btn"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.5rem' }}
-          >
-            ✕
-          </button>
-          <h2>Conecte-se com a gente</h2>
-          <h3>{state.data.title}</h3>
-          <div className="redes-links">
-            {state.data.links.map((link, idx) => (
-              <p key={idx}>
-                <u>
-                  <a href={link.url || '#'} target="_blank" rel="noopener noreferrer">
-                    {link.name}
-                    <i className={`fa-brands ${state.data.icon}`}></i>
-                  </a>
-                </u>
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
-  }
-
   return (
     <div id="container">
       <div 
@@ -122,12 +75,6 @@ function About() {
         >
           ODS 2 — Fome Zero e Agricultura Sustentável
         </a>
-      </div>
-
-      <div className="inserir_redes">
-        {renderModal('instagram')}
-        {renderModal('linkedin')}
-        {renderModal('github')}
       </div>
 
       <Footer />
