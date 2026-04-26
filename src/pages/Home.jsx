@@ -32,7 +32,7 @@ function Home() {
         📺{' '}
         <a
           className="youtube-link"
-          href="https://youtu.be/F28Uld5u1Hg"
+          href="https://youtu.be/ccEtSWF5VHk"
           target="_blank"
           rel="noopener noreferrer"
         >

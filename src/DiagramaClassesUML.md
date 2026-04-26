@@ -1,6 +1,6 @@
 # Diagrama de Classes UML - Projeto Indra
 
-## Principais classes identificadas
+## Principais classes 
 
 - `App`
   - Atributos:
@@ -214,18 +214,6 @@ classDiagram
       +validate()
     }
 ``` 
-
-## Alterações e como foi feito
-
-1. Analisei o código existente em `src/App.jsx`, `src/pages/*`, `src/components/*` e os novos componentes de feedback.
-2. Identifiquei os principais objetos do sistema:
-   - páginas (`Home`, `Contact`, `Prototype`)
-   - layout comum (`Header`, `Footer`)
-   - bloco funcional de feedback (`FeedbackSection`, `FeedbackForm`, `FeedbackItem`)
-   - objetos de domínio (`Service`, `Feedback`, `SocialMediaProfile`, `ContactFormData`).
-3. Para cada classe, extraí atributos de estado e propriedades React, e métodos correspondentes a comportamentos de UI e validação.
-4. Modelei os relacionamentos entre classes como composição quando um componente contém outro e como associação quando há uso indireto via props.
-5. Criei este arquivo de documentação em Markdown com o diagrama UML e as descrições principais.
 
 ### Resultado
 - O diagrama mostra pelo menos 3 classes principais: `Home`, `FeedbackSection`, `Footer`.
